@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Posts\Commands\DeletePost\" />
+    <Folder Include="Posts\Commands\UpdatePost\" />
+    <Folder Include="Posts\Queries\GetAllPosts\" />
+    <Folder Include="Posts\Queries\GetPost\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Posts\Queries\GetPost\GetPostByIdResponse.cs" />
+    <Compile Remove="Posts\Commands\CreatePost\CreatePostResponse.cs" />
+    <Compile Remove="Posts\Commands\CreatePost\CreatePostDto.cs" />
+    <Compile Remove="Posts\Commands\UpdatePost\UpdatePostDto.cs" />
+    <Compile Remove="Posts\Commands\UpdatePost\UpdatePostResponse.cs" />
+    <Compile Remove="Posts\Commands\DeletePost\DeletePostCommandValidation.cs" />
+  </ItemGroup>
+
+</Project>
